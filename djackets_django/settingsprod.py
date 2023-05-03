@@ -96,8 +96,12 @@ WSGI_APPLICATION = 'djackets_django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'djackets',
+        'USER': 'djacketsuser',
+        'PASSWORD': 'secret123',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 

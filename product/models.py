@@ -10,7 +10,7 @@ class Category(models.Model):
 
     class Meta:
         ordering = ('name',)
-    
+
     def __str__(self):
         return self.name
 
@@ -29,30 +29,33 @@ class Product(models.Model):
 
     class Meta:
         ordering = ('-date_added',)
-    
+
     def __str__(self):
         return self.name
-    
+
     def get_absolute_url(self):
         return f'/{self.category.slug}/{self.slug}/'
-    
+
     def get_image(self):
         if self.image:
-            return 'http://127.0.0.1:8000' + self.image.url
+            # return 'http://127.0.0.1:8000' + self.image.url
+            return 'https://hobbycoding.shop' + self.image.url
         return ''
-    
+
     def get_thumbnail(self):
         if self.thumbnail:
-            return 'http://127.0.0.1:8000' + self.thumbnail.url
+            # return 'http://127.0.0.1:8000' + self.thumbnail.url
+            return 'https://hobbycoding.shop' + self.thumbnail.url
         else:
             if self.image:
                 self.thumbnail = self.make_thumbnail(self.image)
                 self.save()
 
-                return 'http://127.0.0.1:8000' + self.thumbnail.url
+                # return 'http://127.0.0.1:8000' + self.thumbnail.url
+                return 'https://hobbycoding.shop' + self.thumbnail.url
             else:
                 return ''
-    
+
     def make_thumbnail(self, image, size=(300, 200)):
         img = Image.open(image)
         img.convert('RGB')

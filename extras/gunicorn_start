@@ -2,7 +2,7 @@
 
 NAME='djackets_django'
 DJANGODIR=/webapps/djackets/djackets_django
-SOCKFILE=/webapps/djackets/environment_3_8_2/run/gunicorn.sock
+SOCKFILE=/webapps/djackets/environment_3_8_10/run/gunicorn.sock
 USER=djackets
 GROUP=webapps
 NUM_WORKERS=3
@@ -11,18 +11,19 @@ DJANGO_WSGI_MODULE=djackets_django.wsgi
 TIMEOUT=120
 
 cd $DJANGODIR
-source ../environment_3_8_2/bin/activate
+source ../environment_3_8_10/bin/activate
 export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
 export PYTHONPATH=$DJANGODIR:$PYTHONPATH
 
 RUNDIR=$(dirname $SOCKFILE)
 test -d $RUNDIR || mkdir -p $RUNDIR
 
-exec ../environment_3_8_2/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
+exec ../environment_3_8_10/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
 --name $NAME \
 --workers $NUM_WORKERS \
 --timeout $TIMEOUT \
 --user=$USER --group=$GROUP \
---bind=unix:$SOCKFILE \
+#--bind=0:8000 \  #port 방식임
+--bind=unix:$SOCKFILE \  #socket 방식으로 확인이 필요하다 test 를 위해 port 방식으로 진행하였다.
 --log-level=debug \
 --log-file=-

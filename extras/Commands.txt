@@ -25,7 +25,7 @@ Add user group and user
 	sudo groupadd --system webapps
 	sudo useradd --system --gid webapps --shell /bin/bash --home /webapps/djackets djackets
 	virtualenv environment_3_8_10
-	
+
 Install Python packages from local server
 	pip install -r req.txt
 
@@ -53,6 +53,7 @@ Install Supervisor (reread, update and restart)
 
 Make a symbolic link
 	ln -s ../sites-available/apidjackets.codewithstein.com .
+
 
 Get the SSL / HTTPS certificate for the domain
 	sudo certbot -d djackets.codewithstein.com
