@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'order'
 ]
 
-# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_TRUSTED_ORIGINS = [
     "http://192.168.0.13",
@@ -163,6 +163,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'   # Is appended at the end of the address of the server.
 MEDIA_ROOT = BASE_DIR / 'media/' # is where WE are going to upload images
+STATIC_ROOT = BASE_DIR / 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

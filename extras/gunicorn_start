@@ -23,7 +23,6 @@ exec ../environment_3_8_10/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
 --workers $NUM_WORKERS \
 --timeout $TIMEOUT \
 --user=$USER --group=$GROUP \
---bind=0.0.0.0:8000 \  #port 방식임
-#--bind=unix:$SOCKFILE \  #socket 방식으로 확인이 필요하다 test 를 위해 port 방식으로 진행하였다.
+--bind=unix:$SOCKFILE \
 --log-level=debug \
 --log-file=-
