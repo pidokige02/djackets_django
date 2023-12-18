@@ -26,9 +26,8 @@ SECRET_KEY = 'django-insecure-vnc2rl@j1mgs!w7s!n#5hz)e)d8s6w3i&9mlsz&+87ft3fio#*
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "192.168.0.13",
-    "127.0.0.1",
-    "hobbycoding.shop"
+    "shop.hobbycoding.site",
+    '13.124.235.245',
 ]
 
 
@@ -55,20 +54,14 @@ INSTALLED_APPS = [
 CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://192.168.0.13",
-    "http://127.0.0.1",
-    "http://hobbycoding.shop",
-    "https://hobbycoding.shop",
+    "http://shop.hobbycoding.site",
+    "https://shop.hobbycoding.site",
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://192.168.0.13:8000",
-    "http://192.168.0.13:8080",
-    "http://192.168.0.13",
-    "http://localhost:8000",  # this can be changed to live server address
-    "http://localhost:8080",
-    "http://hobbycoding.shop",
-    "https://hobbycoding.shop",
+    "http://shop.hobbycoding.site",
+    "https://shop.hobbycoding.site",
+    "http://13.124.235.245:8080",
 ]
 
 MIDDLEWARE = [
