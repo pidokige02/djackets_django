@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "shop.hobbycoding.site",
     '13.124.235.245',
+    "shop1.hobbycoding.site",
 ]
 
 STRIPE_SECRET_KEY = 'sk_test_51Mgb8FDVRmxkeQOrSoPpPJQhdPRbm0CRsRoNEuJ85CG6Hfr3h8IvtkprAJZPCs8DxvBfidZ3moFSQSniFv7CSqL900ZjW7xbVp'
@@ -53,14 +54,15 @@ INSTALLED_APPS = [
 CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://shop.hobbycoding.site",
-    "https://shop.hobbycoding.site",
+    "http://shop1.hobbycoding.site",
+    "https://shop1.hobbycoding.site",
+
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://shop.hobbycoding.site",
-    "https://shop.hobbycoding.site",
     "http://13.124.235.245:8080",
+    "http://shop1.hobbycoding.site",
+    "https://shop1.hobbycoding.site",   
 ]
 
 MIDDLEWARE = [
